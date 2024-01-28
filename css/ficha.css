@@ -1,0 +1,54 @@
+body{
+  background: linear-gradient(45deg, #000000, #1a0fdf); 
+  margin: 0;
+  padding: 0;
+}
+
+#card_ficha{
+  
+  background-color: white;
+  margin-bottom: 25%;
+
+}
+
+#logo{
+
+}
+
+#user-perfil{
+ 
+
+ margin-right:50% ;
+ 
+}
+#cont-logo{
+ width:370px ;
+ height:160px ;
+ margin-left:35% ;
+margin-bottom:7% ;
+}
+  
+@media only screen and (max-width: 768px) {
+ #user-perfil {
+   margin-left: 10%; /* Ajuste conforme necessário */
+   margin-right: 10%; /* Ajuste conforme necessário */
+ }
+ #cont-logo{
+    width:250px ;
+    height:160px ;
+    margin-left:20% ;
+ margin-bottom:2% ;
+ }
+}
+@media only screen and (min-width: 768px) and (max-width: 1114px) {
+ #user-perfil {
+   margin-left: ; /* Ajuste conforme necessário */
+   margin-right:60%; /* Ajuste conforme necessário */
+ }
+ #cont-logo{
+    width:250px ;
+    height:160px ;
+    margin-left:35% ;
+ margin-bottom:2% ;
+ }
+}

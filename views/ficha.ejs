@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ficha.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <title>Fichario</title>
+</head>
+<body  class="d-grid">
+    <header> 
+           <div class="container row-cols-md-1" >
+            <div class="d-grid" id="cont-logo">
+              <div class="text-center container-sm m-0 row-sm-3">
+            <img class=" img-fluid  "  id="logo" src="../imgs/logo.png" alt="">
+          </div>   
+    </header>   
+ <main>
+
+   <div  class="container-sm rounded-2 p-2 fs-4 mb-5 w-75" id="card_ficha">
+       <div class="d-grid">
+       <div class="row">        
+       <div class="col-md-6 offset-md-4">
+       <h1 class="card-title align-text-justify p-4  ">Ficha de Usuário</h1>
+        <div class="text-center">
+        <div class="container-sm ">
+          <img id="user-perfil" class="w-50 rounded-circle p-3 ml-4 mr-2 mt-3 mb-4" src="../imgs/user-person.jpg" alt="">
+        </div>
+
+        <% users.forEach(user => { %>
+
+       <div class="col-md-6 ">
+        <p><strong>Nome:</strong><%= user.nome %></p>
+        <p><strong>Data de Nascimento:</strong> 30 anos</p>
+      </div>
+
+      <div class="col-md-6 ">
+        <p><strong>CPF:</strong><%= user.cpf %></p>
+        <p><strong>Cartão do SUS:</strong><%= user.cartao_sus %></p>
+        <p><strong>Telefone:</strong> <%= user.telefone_principal %></p>
+        <p><strong>Telefone Secundário:</strong> <%= user.telefone_principal %></p>
+      </div>
+      <div class="col-md-6  ">
+        <p><strong>Email:</strong><%= user.email %></p>
+      </div>
+      <div class="col-md-7 ">
+        <p><strong>Nº Responsável :</strong><%= user.telefone_responsavel %></p>
+      
+      </div>
+      <div class="col-md-7 ">
+        <p><strong>Alergias :</strong><%= user.alergias %></p>
+      
+      </div>
+
+      <div class="col-md-7 ">
+        <p><strong>Tipo Sanguíneo:</strong><%= user.tipo_sanguineo %></p>
+      
+      </div>
+
+      <div class="col-md-7 ">
+        <p><strong> Comorbidades:</strong><%= user.comorbidade %></p>
+      </div>
+        <% }); %>
+      </div>
+      
+    </div>
+ </main>  
+
+       
+
+        
+ </body>
+</html>
+-->

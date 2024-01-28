@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Socorro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js" ></script>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+    <form id="chat">
+        <a href='/'><img class="logo" src="/img/logo_chat.png" alt="logo"></a>
+        <div class="messages">
+            <div class="bot"><img class="bot_image" src="/img/botchat.png" alt="logo"><div>Olá! Sou a Assistente Médico Virtual Socorro. Estou aqui para ajudar em situações de emergência ou tratamento de doenças. Meu objetivo é fornecer instruções rápidas e concisas para garantir a sua segurança e saúde. Se você precisar de ajuda, sinta-se à vontade para me perguntar.</div></div>
+        </div>
+        <script type="text/javascript">
+            var socket = io('http://localhost:3000');
+            function renderMessage(message) {
+                if(message.author == 'bot'){
+                $('.messages').append('<div class="'+message.author+'">'+  '<img class="bot_image" src="/img/botchat.png" alt="logo">'+'<div>'+message.message+'</div>' + '</div>' );
+                }
+                else{
+                $('.messages').append('<div class="'+message.author+'">'+ '<div>'+message.message+'</div>'+ '</div>' );
+                }
+                $('.messages').scrollTop($('.messages')[0].scrollHeight);
+            }
+            socket.on('previousMessage', function (messages) {
+                for (message of messages) {
+                    renderMessage(message);
+                }
+            });
+            socket.on('receivedMessage', function (message) {
+                renderMessage(message);
+            });
+            socket.on('databot', function (databot) {
+                renderMessage(databot);
+                $('#enviar_botao').prop('disabled', false).removeClass('botao-desativado');
+            });
+
+
+            $('#chat').submit(function (event) {
+                event.preventDefault();
+                $('#enviar_botao').prop('disabled', true).addClass('botao-desativado');
+                var author = "visitante";
+                var message = $('input[name=message]').val();
+                if (author.length && message.length) {
+                    var messageObject = {
+                        author: author,
+                        message: message,
+                    };
+                    renderMessage(messageObject);
+                    socket.emit('sendMessage', messageObject);
+                    $('input[name=message]').val('');
+                } else {
+                    $('#enviar_botao').prop('disabled', false).removeClass('botao-desativado');
+                }
+            });
+
+        </script>
+        <div class="input_user">
+        <input type="text" name="message" placeholder="Digite sua mensagem">
+        <button type="submit" id="enviar_botao">Enviar</button>
+        </div>
+    </form>    
+</body>
+</html>
+
+

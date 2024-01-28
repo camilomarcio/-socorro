@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0e0054;
+  color: white;
+}
+
+#chat {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+.bot_image{
+  height: 35px;
+  width: auto;;
+  margin-bottom: -125px;
+  padding-right: 3px;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 40px 10px 25px;
+  margin-bottom: 10px;
+  border: 1px solid #666666;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: 10px center; 
+  margin-top: 20px;
+  border: none;
+}
+
+#enviar_botao {
+  color: white;
+  background-color: #fa0000;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border: none;
+  margin-left: 4px;
+}
+
+#enviar_botao:hover{
+  cursor: pointer;
+}
+
+.input_user{
+  display: flex;
+}
+
+
+#enviar_botao.botao-desativado {
+  opacity: 0.5; 
+  cursor: not-allowed; 
+}
+
+
+.bot {
+  display: flex;
+  justify-content: left;
+
+}
+.bot >div{
+  margin-top: 20px;
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 10px;
+  background-color: #9c9c9c;
+  padding: 10px;
+  border-radius: 15px;
+  white-space: pre-wrap;
+  border-top-left-radius: 0px;
+}
+.visitante {
+  display: flex;
+  justify-content: right;
+
+}
+
+.visitante div{
+  margin-top: 20px;
+  text-align: right;
+  font-size: 15px;
+  margin-bottom: 10px;
+  background-color: #fa0000;
+  padding: 10px;
+  border-radius: 15px;
+  border-bottom-right-radius: 0px;
+  white-space: pre-wrap;
+}
+
+.messages{
+  background-color: white;
+  padding: 20px;
+  height: 50vh;
+  border-radius: 15px;
+  overflow: auto;
+  border: none;
+}
+
+
